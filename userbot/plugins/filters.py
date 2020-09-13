@@ -40,8 +40,8 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@borg.on(admin_cmd(pattern="filter (\w*)"))
-@borg.on(sudo_cmd(pattern="filter (\w*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="filter (.*)"))
+@borg.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def add_new_filter(new_handler):
     keyword = new_handler.pattern_match.group(1)
     string = new_handler.text.partition(keyword)[2]
