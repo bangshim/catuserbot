@@ -5,6 +5,7 @@
 Syntax: .ud Query"""
 import asyncurban
 from PyDictionary import PyDictionary
+
 from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
@@ -25,6 +26,7 @@ async def _(event):
     except asyncurban.WordNotFoundError:
         await edit_or_reply(event, "No result found for **" + word + "**")
 
+
 @borg.on(admin_cmd(pattern="meaning (.*)"))
 @borg.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
@@ -38,16 +40,17 @@ async def _(event):
             for i in b:
                 output += f"☞__{i}__\n"
         await edit_or_reply(event, output)
-    except Exception as e:
+    except Exception:
         await edit_or_reply(event, f"Couldn't fetch meaning of {word}")
+
 
 CMD_HELP.update(
     {
-    "dictionary": "**Plugin :** `dictionary`\
+        "dictionary": "**Plugin :** `dictionary`\
     \n\n**Syntax :** `.ud query`\
     \n**Usage : **fetches meaning from Urban dictionary\
     \n\n**Syntax : **`.meaning query`\
     \n**Usage : **Fetches meaning of the given word\
     "
     }
-)        
+)
