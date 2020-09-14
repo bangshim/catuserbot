@@ -123,7 +123,6 @@ async def _(event):
     await et.delete()
 
 
-
 CMD_HELP.update(
     {
         "watch": "**Plugin :** `watch`\
@@ -131,4 +130,4 @@ CMD_HELP.update(
     \n**Usage : **Fetches the list of sites(standard) where you can watch that movie\
     "
     }
-)        
+)
