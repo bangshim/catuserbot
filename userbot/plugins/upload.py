@@ -259,7 +259,7 @@ async def uploadas(event):
                     video_note=True,
                     attributes=[
                         DocumentAttributeVideo(
-                            duration=0,
+                            duration=60,
                             w=1,
                             h=1,
                             round_message=True,
@@ -283,10 +283,13 @@ async def uploadas(event):
     else:
         await uas_event.edit("404: File Not Found")
 
-
 CMD_HELP.update(
     {
-        "upload": ".upload <path in server>\
-\nUsage: Uploads a locally stored file to the chat."
+        "upload": "**Plugin :** `upload`\
+    \n\n**Syntax :** `.upload path of file`\
+    \n**Usage : **Uploads the file from the server\
+    \n\n**Syntax : **`.uploadasstream path of video/audio`\
+    \n**Usage : **Uploads video/audio as streamable from the server\
+    "
     }
-)
+)`
