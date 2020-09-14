@@ -5,8 +5,9 @@
 Syntax: .ud Query"""
 import asyncurban
 from PyDictionary import PyDictionary
-from .. import CMD_HELP
+
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @borg.on(admin_cmd(pattern="ud (.*)"))
 @borg.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
@@ -15,23 +16,25 @@ async def _(event):
     urban = asyncurban.UrbanDictionary()
     try:
         mean = await urban.get_word(word)
-        await edit_or_reply(event, 
+        await edit_or_reply(
+            event,
             "Text: **{}**\n\nMeaning: **{}**\n\nExample: __{}__".format(
                 mean.word, mean.definition, mean.example
-            )
+            ),
         )
     except asyncurban.WordNotFoundError:
-        await edit_or_reply(event,"No result found for **" + word + "**")
-        
+        await edit_or_reply(event, "No result found for **" + word + "**")
+
+
 @borg.on(admin_cmd(pattern="meaning (.*)"))
 @borg.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
     word = event.pattern_match.group(1)
-    dictionary=PyDictionary()
+    dictionary = PyDictionary()
     cat = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
-    for a,b in cat.items():
+    for a, b in cat.items():
         output += f"**{a}**\n"
         for i in b:
-            output +=  f"__{i}__\n"
-    await edit_or_reply(event , output )
+            output += f"__{i}__\n"
+    await edit_or_reply(event, output)
