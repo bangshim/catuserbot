@@ -1,3 +1,3 @@
-from . import memeifyhelpers as tempmemes
 from .functions import *
+from .memeifyhelpers import *
 from .qhelper import process
