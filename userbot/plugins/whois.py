@@ -302,6 +302,6 @@ CMD_HELP.update(
     \n\n**Syntax : **`.userinfo <username>` or reply to someones text with .userinfo\
     \n**Usage :** Gets info of an user.\
     \n\n**Syntax : **`.link` <text>\
-    \n**Usage :** Generates a link to the user's PM with a custom text.""
+    \n**Usage :** Generates a link to the user's PM with a custom text."
     }
 )
