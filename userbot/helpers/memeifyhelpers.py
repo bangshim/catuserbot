@@ -1,8 +1,9 @@
+import asyncio
+import shlex
 from os import getcwd
 from os.path import join
 from textwrap import wrap
-import asyncio
-import shlex
+
 from PIL import Image, ImageDraw, ImageFont
 from wand.color import Color
 from wand.drawing import Drawing
@@ -85,6 +86,7 @@ async def cat_meeme(upper_text, lower_text, picture_name, endname):
     text_draw(main_image)
     main_image.save(filename=endname)
 
+
 # executing of terminal commands
 
 
@@ -99,7 +101,7 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         stderr.decode("utf-8", "replace").strip(),
         process.returncode,
         process.pid,
-    )    
+    )
 
 
 # For using gif , animated stickers and videos in some parts , this

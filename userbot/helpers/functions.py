@@ -1,11 +1,7 @@
-import asyncio
 import os
 import re
-import shlex
 import time
-from os.path import basename
 from random import choice
-from typing import Optional, Tuple
 
 import PIL.ImageOps
 import requests
