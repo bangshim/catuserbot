@@ -8,6 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 from wand.color import Color
 from wand.drawing import Drawing
 from wand.image import Image as catimage
+from typing import Optional, Tuple
+from os.path import basename
 
 MARGINS = [50, 150, 250, 350, 450]
 
