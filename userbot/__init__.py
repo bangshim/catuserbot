@@ -13,9 +13,9 @@ from telethon.sessions import StringSession
 
 from var import Var
 
+from .helpers import *
 from .helpers import functions as catdef
 from .helpers import memeshelper as memes
-from .helpers import *
 
 StartTime = time.time()
 catversion = "2.7.3"

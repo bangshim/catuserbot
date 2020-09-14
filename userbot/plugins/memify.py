@@ -9,6 +9,8 @@ from .. import CMD_HELP, LOGS
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import (
     add_frame,
+    cat_meeme,
+    cat_meme,
     convert_toimage,
     crop,
     flip_image,
@@ -18,8 +20,6 @@ from . import (
     runcmd,
     solarize,
     take_screen_shot,
-    cat_meme,
-    cat_meeme
 )
 
 
