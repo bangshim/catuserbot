@@ -8,6 +8,7 @@ Use .zombies clean to remove deleted accounts from the groups and channels.
 \nPorted by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)"""
 
 from asyncio import sleep
+
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
@@ -55,7 +56,9 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "`No deleted accounts found, Group is clean`"
     if con != "clean":
-        event = await edit_or_reply(show, "`Searching for ghost/deleted/zombie accounts...`")
+        event = await edit_or_reply(
+            show, "`Searching for ghost/deleted/zombie accounts...`"
+        )
         async for user in bot.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
@@ -73,7 +76,9 @@ async def rm_deletedacc(show):
     if not admin and not creator:
         await edit_or_reply(show, "`I am not an admin here!`")
         return
-    event = await edit_or_reply(show, "`Deleting deleted accounts...\nOh I can do that?!?!`")
+    event = await edit_or_reply(
+        show, "`Deleting deleted accounts...\nOh I can do that?!?!`"
+    )
     del_u = 0
     del_a = 0
 
