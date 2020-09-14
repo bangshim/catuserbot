@@ -36,5 +36,5 @@ async def _(event):
     for a, b in cat.items():
         output += f"**{a}**\n"
         for i in b:
-            output += f"__{i}__\n"
+            output += f"☞__{i}__\n"
     await edit_or_reply(event, output)
