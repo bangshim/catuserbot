@@ -1,4 +1,5 @@
-from .. import CMD_HELP, fonts
+from .. import CMD_HELP
+from . import fonts
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
