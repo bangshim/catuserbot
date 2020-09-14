@@ -7,11 +7,10 @@ Audio and video downloader using Youtube-dl
 """
 
 import asyncio
-import math
 import os
 import time
 from html import unescape
-from .. import CMD_HELP
+
 from googleapiclient.discovery import build
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
@@ -26,7 +25,8 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd,progress,humanbytes,time_formatter
+from .. import CMD_HELP
+from ..utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="yt(a|v) (.*)"))
@@ -213,6 +213,7 @@ async def youtube_search(
         nexttok = "KeyError, try again."
         return (nexttok, videos)
 
+
 CMD_HELP.update(
     {
         "ytdl": "**Plugin :** `ytdl`\
@@ -224,4 +225,4 @@ CMD_HELP.update(
     \n**Usage : **Fetches youtube results you need api token for this\
     "
     }
-)                  
+)
