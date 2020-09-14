@@ -33,8 +33,11 @@ async def _(event):
     dictionary = PyDictionary()
     cat = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
-    for a, b in cat.items():
-        output += f"**{a}**\n"
-        for i in b:
-            output += f"☞__{i}__\n"
-    await edit_or_reply(event, output)
+    try:
+        for a, b in cat.items():
+            output += f"**{a}**\n"
+            for i in b:
+                output += f"☞__{i}__\n"
+        await edit_or_reply(event, output)
+   except Exception as e:
+        await edit_or_reply(event, f"**Error :**`{str(e)}`")
