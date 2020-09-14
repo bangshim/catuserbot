@@ -84,7 +84,8 @@ async def labstack(event):
 )
 @borg.on(
     sudo_cmd(
-        pattern="webupload ?(.+?|) --(fileio|oload|anonfiles|transfer|filebin|anonymousfiles|vshare|bayfiles)" ,allow_sudo = True
+        pattern="webupload ?(.+?|) --(fileio|oload|anonfiles|transfer|filebin|anonymousfiles|vshare|bayfiles)",
+        allow_sudo=True,
     )
 )
 async def _(event):
