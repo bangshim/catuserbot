@@ -244,12 +244,12 @@ async def permalink(mention):
     if not user:
         return
     if custom:
-        await edit_or_reply(mention ,f"[{custom}](tg://user?id={user.id})")
+        await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await edit_or_reply(mention ,f"[{tag}](tg://user?id={user.id})")
+        await edit_or_reply(mention, f"[{tag}](tg://user?id={user.id})")
 
 
 async def get_user_from_event(event):
