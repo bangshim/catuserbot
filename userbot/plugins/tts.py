@@ -9,9 +9,9 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from . import deEmojify
-from .. import ALIVE_NAME, CMD_HELP
+from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import deEmojify
 
 
 @borg.on(admin_cmd(pattern="tts (.*)"))
@@ -74,7 +74,9 @@ async def _(event):
             voice_note=True,
         )
         os.remove(required_file_name)
-        event = await edit_or_reply(event, "Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
+        event = await edit_or_reply(
+            event, "Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms)
+        )
         await asyncio.sleep(5)
         await event.delete()
     except Exception as e:
