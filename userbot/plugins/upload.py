@@ -291,6 +291,8 @@ CMD_HELP.update(
     \n**Usage : **Uploads the file from the server\
     \n\n**Syntax : **`.uploadasstream path of video/audio`\
     \n**Usage : **Uploads video/audio as streamable from the server\
+    \n\n**Syntax : **`.uploadasvn path of video`\
+    \n**Usage : **Uploads video/audio as round video from the server **Present supports few videos need to work onit takes some time to develop it **\
     "
     }
 )
