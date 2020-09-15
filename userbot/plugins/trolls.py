@@ -18,9 +18,10 @@ import os
 import pybase64
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from . import *
-from .. import ALIVE_NAME, CMD_HELP
+
+from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import *
 
 
 @borg.on(admin_cmd(pattern="threats(?: |$)(.*)"))
@@ -30,12 +31,12 @@ async def catbot(catmemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes , "reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes ,"passing to telegraph...")
+        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     try:
         cat = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -43,9 +44,7 @@ async def catbot(catmemes):
         await catmemes.client(cat)
     except BaseException:
         pass
-    download_location = await borg.download_media(
-        replied, "./temp/"
-    )
+    download_location = await borg.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -81,12 +80,12 @@ async def catbot(catmemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes ,"passing to telegraph...")
+        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     try:
         cat = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -94,9 +93,7 @@ async def catbot(catmemes):
         await catmemes.client(cat)
     except BaseException:
         pass
-    download_location = await borg.download_media(
-        replied, "./temp/"
-    )
+    download_location = await borg.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -133,20 +130,21 @@ async def catbot(catmemes):
     if "|" in input_str:
         text1, text2 = input_str.split("|")
     else:
-        await edit_or_reply(catmemes ,
-            "**Syntax :** reply to image or sticker with `.trap (name of the person to trap)|(trapper name)`"
+        await edit_or_reply(
+            catmemes,
+            "**Syntax :** reply to image or sticker with `.trap (name of the person to trap)|(trapper name)`",
         )
         return
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes ,"passing to telegraph...")
+        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     try:
         cat = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -154,9 +152,7 @@ async def catbot(catmemes):
         await catmemes.client(cat)
     except BaseException:
         pass
-    download_location = await borg.download_media(
-        replied, "./temp/"
-    )
+    download_location = await borg.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -193,20 +189,21 @@ async def catbot(catmemes):
     if "|" in input_str:
         username, text = input_str.split("|")
     else:
-        await edit_or_reply(catmemes ,
-            "**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`"
+        await edit_or_reply(
+            catmemes,
+            "**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`",
         )
         return
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     if replied.media:
-        catmemmes = await edit_or_reply(catmemes ,"passing to telegraph...")
+        catmemmes = await edit_or_reply(catmemes, "passing to telegraph...")
     else:
-        await edit_or_reply(catmemes ,"reply to a supported media file")
+        await edit_or_reply(catmemes, "reply to a supported media file")
         return
     try:
         cat = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -214,9 +211,7 @@ async def catbot(catmemes):
         await catmemes.client(cat)
     except BaseException:
         pass
-    download_location = await borg.download_media(
-        replied, "./temp/"
-    )
+    download_location = await borg.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
