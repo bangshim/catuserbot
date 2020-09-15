@@ -4,9 +4,10 @@ Available Commands:
 .tr LangaugeCode | text to translate"""
 
 from googletrans import Translator
-from . import deEmojify
-from .. import ALIVE_NAME, CMD_HELP
+
+from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from . import deEmojify
 
 
 @borg.on(admin_cmd(pattern="tl ?(.*)"))
@@ -25,7 +26,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await edit_or_reply(event,"`.tl LanguageCode` as reply to a message")
+        await edit_or_reply(event, "`.tl LanguageCode` as reply to a message")
         return
     text = deEmojify(text.strip())
     lan = lan.strip()
@@ -39,10 +40,9 @@ async def _(event):
 {}""".format(
             translated.src, lan, after_tr_text
         )
-        await edit_or_reply(event,output_str)
+        await edit_or_reply(event, output_str)
     except Exception as exc:
-        await edit_or_reply(event,str(exc))
-
+        await edit_or_reply(event, str(exc))
 
 
 CMD_HELP.update(
@@ -53,4 +53,4 @@ CMD_HELP.update(
          \n.tl LangaugeCode | text to translate\
         "
     }
-)        
+)
