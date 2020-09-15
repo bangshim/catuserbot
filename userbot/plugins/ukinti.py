@@ -18,7 +18,7 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 
-from .. import ALIVE_NAME, CMD_HELP
+from .. import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
@@ -202,6 +202,7 @@ async def ban_user(chat_id, i, rights):
     except Exception as exc:
         return False, str(exc)
 
+
 CMD_HELP.update(
     {
         "ukinti": "**Plugin : **`ukinti`\
@@ -211,4 +212,4 @@ CMD_HELP.update(
         \n**Usage: **stats of the group like no of users no of deleted users. \
         "
     }
-)    
+)
